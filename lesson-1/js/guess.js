@@ -1,9 +1,12 @@
 // STEP 1: Initialize game variables
 // STEP 1a: Pick random number
+let randomNumber = Math.floor(Math.random() * 100) + 1;
 /* */
 // STEP 1b: Create variables to represent the three paragraphs above that will contain user feedback
 const guesses = document.querySelector('p#guesses');
 const lastResult = document.querySelector('p#lastResult');
+const lowOrHi = document.querySelector("#lowOrHi");
+
 /* */
 // STEP 1c: Create variables to represent the guessing form
 const guessField = document.querySelector('input#guessField');
@@ -29,14 +32,14 @@ function checkGuess() {
     // STEP 3d: Conditional - the user guessed correctly
     if (userGuess === randomNumber) {
         // Output a success message, then end the game
-        /* */
+        lastResult.textContent = "you Guessed it right";
         lastResult.style.backgroundColor = 'green';
         lowOrHi.textContent = '';
         setGameOver();
     // STEP 3e: Conditional - the user is all out of guesses
     } else if (guessCount === 10) {
         // Output an appropriate message, then end the game
-        /* */
+        lastResult.textContent = "You're out of guesses";
         setGameOver();
     // STEP 3f: Conditional - the user's guess is incorrect
     } else {
@@ -44,7 +47,7 @@ function checkGuess() {
         lastResult.textContent = 'Wrong!';
         lastResult.style.backgroundColor = 'red';
         // If the guess is too low, let the user know
-        if (userGuess /* */) {
+        if (userGuess < randomNumber) {
             lowOrHi.textContent = 'Too low.';
         // Else if the guess is too high, let the user know
         } else if (userGuess > randomNumber) {
