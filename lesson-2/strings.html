@@ -14,21 +14,33 @@
     const output = document.querySelector('p');
     
     /* STEP 1: Creating Strings */
-
+    let step1 = "this is a string";
+    output.textContent = step1;
     
     // Note - whether you use 'single' or "double" quotes is a personal preference - try to be consistent
 
     /* STEP 2: Escaping Characters */
-
+    let step2 = `scott says: "you're gay haha", wow mr scott that's really mean!`;
 
     /* STEP 3: Concatenation */
+    let step3a = "Javascript";
+    let step3b = "rocks";
 
+    console.log(step3a + " "+ step3b);
+    console.log(`${step3a} + ${step3b}`); 
 
     /* STEP 4: Numbers and Strings */
+    let step4a = "Fahrenheit" + 541;
+    console.log(step4a);
 
     // numbers can be converted to strings
-
+    let step4b = 2025;
+    let step4c = String(step4b);
+    console.log(step4c);
+    
     // strings can be converted to numbers, too
+    let step4d = Number(step4c);
+    console.log(`the datatype of step4c is now ${typeof(step4d)}.`);
 
     // and back again, if we want
 
